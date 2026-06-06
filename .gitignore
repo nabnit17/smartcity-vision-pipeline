@@ -1,0 +1,21 @@
+# Node frontend dependencies
+**/node_modules/
+**/.next/
+**/out/
+
+# Python virtual environments & weights
+**/.venv/
+**/__pycache__/
+**/*.pyc
+**/vision-engine/yolov8n.onnx
+**/vision-engine/traffic.mp4
+
+# Java/Maven compilation outputs
+**/target/
+**/.m2/
+**/.idea/
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+*.log

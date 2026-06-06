@@ -1,0 +1,27 @@
+services:
+  # ☕ 1. JAVA GATEWAY
+  gateway-engine:
+    build: ./gateway-engine
+    container_name: smartcity-java-gateway
+    dns: 8.8.8.8
+    ports:
+      - "8080:8080"
+      - "9999:9999"
+    volumes:
+      - ./gateway-engine/historical_input:/app/historical_input
+      - ./gateway-engine/historical_output:/app/historical_output
+    networks:
+      - smartcity-network
+
+  # 💻 2. NEXT.JS DASHBOARD
+  dashboard-ui:
+    build: ./dashboard-ui
+    container_name: smartcity-nextjs-ui
+    ports:
+      - "3000:3000"
+    networks:
+      - smartcity-network
+
+networks:
+  smartcity-network:
+    driver: bridge
